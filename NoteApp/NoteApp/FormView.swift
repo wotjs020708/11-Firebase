@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FormView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: NoteViewModel
+    
     @State var titleText = ""
     var body: some View {
         NavigationStack {
@@ -19,12 +21,14 @@ struct FormView: View {
                 }
                 Section {
                     Button {
-                        
+                        viewModel.addData(title: titleText)
+                        titleText = ""
+                        dismiss()
                     } label: {
                         Text("Save now")
                     }
-                    .disabled(titleText.isEmpty)
                     .foregroundStyle(.yellow)
+                    .disabled(titleText.isEmpty)
                 }
             }
             .navigationTitle("Publish")

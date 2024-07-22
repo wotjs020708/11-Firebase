@@ -28,7 +28,7 @@ struct ContentView: View {
             .navigationTitle("Notes")
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
-                    Text("X notes")
+                    Text("\(viewModel.notes.count) notes")
                     Spacer()
                     Button {
                         showsheet.toggle()
@@ -41,7 +41,8 @@ struct ContentView: View {
                     }
                 }
                 
-        }
+            }
+            .environmentObject(viewModel)
         }
     }
 }
