@@ -11,14 +11,17 @@ struct ContentView: View {
     @State private var showsheet = false
     @State private var postDetent = PresentationDetent.medium
     
+
     @StateObject private var viewModel = NoteViewModel()
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.notes, id: \.id) { note in
-                    VStack(alignment: .leading) {
-                        Text(note.title ?? "")
-                            .font(.system(size: 22, weight: .regular))
+                    NavigationLink(destination: DetailsView(note: note, viewModel: viewModel)) {
+                        VStack(alignment: .leading) {
+                            Text(note.title ?? "")
+                                .font(.system(size: 22, weight: .regular))
+                        }
                     }
                 }
             }
