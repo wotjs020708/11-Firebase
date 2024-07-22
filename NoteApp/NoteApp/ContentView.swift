@@ -8,14 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showsheet = false
+    @State private var postDetent = PresentationDetent.medium
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+            
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Text("X notes")
+                    Spacer()
+                    Button {
+                        showsheet.toggle()
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                    }
+                    .imageScale(.large)
+                    .sheet(isPresented: $showsheet) {
+                        FormView().presentationDetents([.large, .medium])
+                    }
+                }
+                
         }
-        .padding()
+        }
     }
 }
 

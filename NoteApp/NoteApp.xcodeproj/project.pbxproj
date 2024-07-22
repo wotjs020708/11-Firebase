@@ -15,6 +15,9 @@
 		4B1DC99C2C4DEDDA009AA8F3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1DC99B2C4DEDDA009AA8F3 /* FirebaseAuth */; };
 		4B1DC99E2C4DEDDA009AA8F3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1DC99D2C4DEDDA009AA8F3 /* FirebaseFirestore */; };
 		4B1DC9A02C4DEDDA009AA8F3 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1DC99F2C4DEDDA009AA8F3 /* FirebaseFirestoreSwift */; };
+		4B1DC9A22C4DF8BD009AA8F3 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC9A12C4DF8BD009AA8F3 /* Note.swift */; };
+		4B1DC9A42C4DF910009AA8F3 /* NoteViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC9A32C4DF910009AA8F3 /* NoteViewmodel.swift */; };
+		4B1DC9A82C4DFF26009AA8F3 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B1DC9912C4DE8CD009AA8F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B1DC9982C4DEBF1009AA8F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "NoteApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B1DC9A12C4DF8BD009AA8F3 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		4B1DC9A32C4DF910009AA8F3 /* NoteViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewmodel.swift; sourceTree = "<group>"; };
+		4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 			isa = PBXGroup;
 			children = (
 				4B1DC98A2C4DE8CC009AA8F3 /* NoteAppApp.swift */,
+				4B1DC9A12C4DF8BD009AA8F3 /* Note.swift */,
+				4B1DC9A32C4DF910009AA8F3 /* NoteViewmodel.swift */,
+				4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */,
 				4B1DC98C2C4DE8CC009AA8F3 /* ContentView.swift */,
 				4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */,
 				4B1DC9902C4DE8CD009AA8F3 /* Preview Content */,
@@ -155,8 +164,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1DC9A42C4DF910009AA8F3 /* NoteViewmodel.swift in Sources */,
 				4B1DC98D2C4DE8CC009AA8F3 /* ContentView.swift in Sources */,
+				4B1DC9A82C4DFF26009AA8F3 /* FormView.swift in Sources */,
 				4B1DC98B2C4DE8CC009AA8F3 /* NoteAppApp.swift in Sources */,
+				4B1DC9A22C4DF8BD009AA8F3 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
