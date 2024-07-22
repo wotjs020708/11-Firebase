@@ -11,6 +11,7 @@
 		4B1DC98D2C4DE8CC009AA8F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC98C2C4DE8CC009AA8F3 /* ContentView.swift */; };
 		4B1DC98F2C4DE8CD009AA8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */; };
 		4B1DC9922C4DE8CD009AA8F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1DC9912C4DE8CD009AA8F3 /* Preview Assets.xcassets */; };
+		4B1DC9992C4DEBF1009AA8F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B1DC9982C4DEBF1009AA8F3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4B1DC98C2C4DE8CC009AA8F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B1DC9912C4DE8CD009AA8F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4B1DC9982C4DEBF1009AA8F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "NoteApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 		4B1DC97E2C4DE8CC009AA8F3 = {
 			isa = PBXGroup;
 			children = (
+				4B1DC9982C4DEBF1009AA8F3 /* GoogleService-Info.plist */,
 				4B1DC9892C4DE8CC009AA8F3 /* NoteApp */,
 				4B1DC9882C4DE8CC009AA8F3 /* Products */,
 			);
@@ -127,6 +130,7 @@
 			files = (
 				4B1DC9922C4DE8CD009AA8F3 /* Preview Assets.xcassets in Resources */,
 				4B1DC98F2C4DE8CD009AA8F3 /* Assets.xcassets in Resources */,
+				4B1DC9992C4DEBF1009AA8F3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +276,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NoteApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 39626F6B8U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -300,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NoteApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 39626F6B8U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
