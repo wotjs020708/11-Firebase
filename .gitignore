@@ -147,3 +147,5 @@ iOSInjectionProject/
 *.png
 
 *.mlmodel
+
+*.plist
