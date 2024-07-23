@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B1DC98B2C4DE8CC009AA8F3 /* NoteAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC98A2C4DE8CC009AA8F3 /* NoteAppApp.swift */; };
-		4B1DC98D2C4DE8CC009AA8F3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC98C2C4DE8CC009AA8F3 /* ContentView.swift */; };
+		4B1DC98D2C4DE8CC009AA8F3 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC98C2C4DE8CC009AA8F3 /* NoteListView.swift */; };
 		4B1DC98F2C4DE8CD009AA8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */; };
 		4B1DC9922C4DE8CD009AA8F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B1DC9912C4DE8CD009AA8F3 /* Preview Assets.xcassets */; };
 		4B1DC9992C4DEBF1009AA8F3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B1DC9982C4DEBF1009AA8F3 /* GoogleService-Info.plist */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		4B1DC9872C4DE8CC009AA8F3 /* NoteApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B1DC98A2C4DE8CC009AA8F3 /* NoteAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppApp.swift; sourceTree = "<group>"; };
-		4B1DC98C2C4DE8CC009AA8F3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4B1DC98C2C4DE8CC009AA8F3 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B1DC9912C4DE8CD009AA8F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B1DC9982C4DEBF1009AA8F3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "NoteApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -77,15 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				4B1DC98A2C4DE8CC009AA8F3 /* NoteAppApp.swift */,
-				4B1DC9A12C4DF8BD009AA8F3 /* Note.swift */,
-				4B1DC9A32C4DF910009AA8F3 /* NoteViewModel.swift */,
-				4B61F68E2C4F2E3000FDF5A4 /* HolderView.swift */,
-				4B61F6902C4F2E9800FDF5A4 /* SignUpView.swift */,
-				4B61F6922C4F42EC00FDF5A4 /* ResetPasswordView.swift */,
-				4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */,
-				4B1DC98C2C4DE8CC009AA8F3 /* ContentView.swift */,
-				4B1DC9A92C4E2353009AA8F3 /* DetailsView.swift */,
-				4B61F68C2C4F2CB700FDF5A4 /* AuthViewModel.swift */,
+				4B61F6AF2C4F688500FDF5A4 /* Models */,
+				4B61F6B12C4F68D100FDF5A4 /* ViewModels */,
+				4B61F6B02C4F68B900FDF5A4 /* NoteViews */,
+				4B61F6AE2C4F687700FDF5A4 /* AuthViews */,
 				4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */,
 				4B1DC9902C4DE8CD009AA8F3 /* Preview Content */,
 			);
@@ -98,6 +93,43 @@
 				4B1DC9912C4DE8CD009AA8F3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4B61F6AE2C4F687700FDF5A4 /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				4B61F6902C4F2E9800FDF5A4 /* SignUpView.swift */,
+				4B61F6922C4F42EC00FDF5A4 /* ResetPasswordView.swift */,
+			);
+			path = AuthViews;
+			sourceTree = "<group>";
+		};
+		4B61F6AF2C4F688500FDF5A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4B1DC9A12C4DF8BD009AA8F3 /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4B61F6B02C4F68B900FDF5A4 /* NoteViews */ = {
+			isa = PBXGroup;
+			children = (
+				4B61F68E2C4F2E3000FDF5A4 /* HolderView.swift */,
+				4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */,
+				4B1DC98C2C4DE8CC009AA8F3 /* NoteListView.swift */,
+				4B1DC9A92C4E2353009AA8F3 /* DetailsView.swift */,
+			);
+			path = NoteViews;
+			sourceTree = "<group>";
+		};
+		4B61F6B12C4F68D100FDF5A4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4B1DC9A32C4DF910009AA8F3 /* NoteViewModel.swift */,
+				4B61F68C2C4F2CB700FDF5A4 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,7 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B1DC9A42C4DF910009AA8F3 /* NoteViewModel.swift in Sources */,
-				4B1DC98D2C4DE8CC009AA8F3 /* ContentView.swift in Sources */,
+				4B1DC98D2C4DE8CC009AA8F3 /* NoteListView.swift in Sources */,
 				4B1DC9A82C4DFF26009AA8F3 /* FormView.swift in Sources */,
 				4B61F68D2C4F2CB700FDF5A4 /* AuthViewModel.swift in Sources */,
 				4B61F68F2C4F2E3000FDF5A4 /* HolderView.swift in Sources */,
