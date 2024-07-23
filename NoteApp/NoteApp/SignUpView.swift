@@ -21,6 +21,7 @@ struct SignUpView: View {
                     TextField("Email", text: $emailAddress)
                         .textContentType(.emailAddress)
                         .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.never)
                     SecureField("Password", text: $password)
                 }
                 

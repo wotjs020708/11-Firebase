@@ -16,6 +16,7 @@ struct HolderView: View {
                 SignUpView()
             } else {
                 ContentView()
+                
             }
         }
         .onAppear {
@@ -27,4 +28,5 @@ struct HolderView: View {
 
 #Preview {
     HolderView()
+        .environmentObject(AuthViewModel())
 }
