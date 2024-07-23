@@ -19,6 +19,9 @@
 		4B1DC9A42C4DF910009AA8F3 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC9A32C4DF910009AA8F3 /* NoteViewModel.swift */; };
 		4B1DC9A82C4DFF26009AA8F3 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */; };
 		4B1DC9AA2C4E2353009AA8F3 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1DC9A92C4E2353009AA8F3 /* DetailsView.swift */; };
+		4B61F68D2C4F2CB700FDF5A4 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F68C2C4F2CB700FDF5A4 /* AuthViewModel.swift */; };
+		4B61F68F2C4F2E3000FDF5A4 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F68E2C4F2E3000FDF5A4 /* HolderView.swift */; };
+		4B61F6912C4F2E9800FDF5A4 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6902C4F2E9800FDF5A4 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		4B1DC9A32C4DF910009AA8F3 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		4B1DC9A92C4E2353009AA8F3 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		4B61F68C2C4F2CB700FDF5A4 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		4B61F68E2C4F2E3000FDF5A4 /* HolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		4B61F6902C4F2E9800FDF5A4 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +77,12 @@
 				4B1DC98A2C4DE8CC009AA8F3 /* NoteAppApp.swift */,
 				4B1DC9A12C4DF8BD009AA8F3 /* Note.swift */,
 				4B1DC9A32C4DF910009AA8F3 /* NoteViewModel.swift */,
+				4B61F68E2C4F2E3000FDF5A4 /* HolderView.swift */,
+				4B61F6902C4F2E9800FDF5A4 /* SignUpView.swift */,
 				4B1DC9A72C4DFF26009AA8F3 /* FormView.swift */,
 				4B1DC98C2C4DE8CC009AA8F3 /* ContentView.swift */,
 				4B1DC9A92C4E2353009AA8F3 /* DetailsView.swift */,
+				4B61F68C2C4F2CB700FDF5A4 /* AuthViewModel.swift */,
 				4B1DC98E2C4DE8CD009AA8F3 /* Assets.xcassets */,
 				4B1DC9902C4DE8CD009AA8F3 /* Preview Content */,
 			);
@@ -170,8 +179,11 @@
 				4B1DC9A42C4DF910009AA8F3 /* NoteViewModel.swift in Sources */,
 				4B1DC98D2C4DE8CC009AA8F3 /* ContentView.swift in Sources */,
 				4B1DC9A82C4DFF26009AA8F3 /* FormView.swift in Sources */,
+				4B61F68D2C4F2CB700FDF5A4 /* AuthViewModel.swift in Sources */,
+				4B61F68F2C4F2E3000FDF5A4 /* HolderView.swift in Sources */,
 				4B1DC98B2C4DE8CC009AA8F3 /* NoteAppApp.swift in Sources */,
 				4B1DC9A22C4DF8BD009AA8F3 /* Note.swift in Sources */,
+				4B61F6912C4F2E9800FDF5A4 /* SignUpView.swift in Sources */,
 				4B1DC9AA2C4E2353009AA8F3 /* DetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
