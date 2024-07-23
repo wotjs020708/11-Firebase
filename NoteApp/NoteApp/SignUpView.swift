@@ -8,11 +8,56 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @State private var emailAddress: String = ""
+    @State private var password: String = ""
+    @State private var showingSheet = false
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Form {
+                Section {
+                    TextField("Email", text: $emailAddress)
+                        .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
+                    SecureField("Password", text: $password)
+                }
+                
+                Section {
+                    Button(action: {
+                        authModel.signUp(emailAddress: emailAddress,
+                                         password: password)
+                    }) {
+                        Text("Sign Up").bold()
+                    }
+                }
+                Section(header: Text("If you already have an account:")) {
+                    Button(action: {
+                        authModel.signIn(emailAddress: emailAddress,
+                                         password: password)
+                    }) {
+                        Text("Sign In")
+                    }
+                }
+            }
+            .navigationTitle("Welcome")
+            .toolbar {
+                ToolbarItemGroup(placement: .cancellationAction) {
+                    Button {
+                        showingSheet.toggle()
+                    } label: {
+                        Text("Forgot password?")
+                    }
+                    .sheet(isPresented: $showingSheet) {
+                        ResetPasswordView()
+                    }
+                }
+            }
+        }
     }
 }
 
 #Preview {
     SignUpView()
+        .environmentObject(AuthViewModel())
 }
