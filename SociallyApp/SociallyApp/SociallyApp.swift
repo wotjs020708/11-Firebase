@@ -21,8 +21,8 @@ struct SociallyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            PostView()
-                .environmentObject(PostViewModel())
+            SignUpView()
+                .environmentObject(AuthViewModel())
         }
     }
 }

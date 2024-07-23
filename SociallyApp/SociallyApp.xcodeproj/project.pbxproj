@@ -11,7 +11,6 @@
 		4B61F6A32C4F685700FDF5A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6A22C4F685700FDF5A4 /* ContentView.swift */; };
 		4B61F6A52C4F685900FDF5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B61F6A42C4F685900FDF5A4 /* Assets.xcassets */; };
 		4B61F6A82C4F685900FDF5A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B61F6A72C4F685900FDF5A4 /* Preview Assets.xcassets */; };
-		4B61F6B32C4F692100FDF5A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B61F6B22C4F692100FDF5A4 /* GoogleService-Info.plist */; };
 		4B61F6B62C4F69B100FDF5A4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4B61F6B52C4F69B100FDF5A4 /* FirebaseAuth */; };
 		4B61F6B82C4F69B100FDF5A4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4B61F6B72C4F69B100FDF5A4 /* FirebaseFirestore */; };
 		4B61F6BA2C4F69B100FDF5A4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4B61F6B92C4F69B100FDF5A4 /* FirebaseFirestoreSwift */; };
@@ -19,6 +18,10 @@
 		4B61F6BE2C4F6B5A00FDF5A4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6BD2C4F6B5A00FDF5A4 /* Post.swift */; };
 		4B61F6C02C4F6CD000FDF5A4 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6BF2C4F6CD000FDF5A4 /* PostViewModel.swift */; };
 		4B61F6C22C4F734B00FDF5A4 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6C12C4F734B00FDF5A4 /* PostView.swift */; };
+		4B61F6C42C4F790300FDF5A4 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6C32C4F790300FDF5A4 /* FeedView.swift */; };
+		4BBB037D2C4F83E5002AB381 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB037C2C4F83E5002AB381 /* AuthViewModel.swift */; };
+		4BBB037F2C4F8414002AB381 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBB037E2C4F8414002AB381 /* SignUpView.swift */; };
+		4BBB03822C4F85D3002AB381 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BBB03812C4F85D3002AB381 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,10 +30,14 @@
 		4B61F6A22C4F685700FDF5A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B61F6A42C4F685900FDF5A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B61F6A72C4F685900FDF5A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4B61F6B22C4F692100FDF5A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4B61F6BD2C4F6B5A00FDF5A4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4B61F6BF2C4F6CD000FDF5A4 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		4B61F6C12C4F734B00FDF5A4 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		4B61F6C32C4F790300FDF5A4 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		4BBB037C2C4F83E5002AB381 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		4BBB037E2C4F8414002AB381 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		4BBB03802C4F854C002AB381 /* SociallyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SociallyApp.entitlements; sourceTree = "<group>"; };
+		4BBB03812C4F85D3002AB381 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Documents/key/firebase Socially 인증 키/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +58,6 @@
 		4B61F6942C4F685700FDF5A4 = {
 			isa = PBXGroup;
 			children = (
-				4B61F6B22C4F692100FDF5A4 /* GoogleService-Info.plist */,
 				4B61F69F2C4F685700FDF5A4 /* SociallyApp */,
 				4B61F69E2C4F685700FDF5A4 /* Products */,
 			);
@@ -68,9 +74,14 @@
 		4B61F69F2C4F685700FDF5A4 /* SociallyApp */ = {
 			isa = PBXGroup;
 			children = (
+				4BBB03812C4F85D3002AB381 /* GoogleService-Info.plist */,
+				4BBB03802C4F854C002AB381 /* SociallyApp.entitlements */,
 				4B61F6A02C4F685700FDF5A4 /* SociallyApp.swift */,
 				4B61F6A22C4F685700FDF5A4 /* ContentView.swift */,
 				4B61F6C12C4F734B00FDF5A4 /* PostView.swift */,
+				4B61F6C32C4F790300FDF5A4 /* FeedView.swift */,
+				4BBB037C2C4F83E5002AB381 /* AuthViewModel.swift */,
+				4BBB037E2C4F8414002AB381 /* SignUpView.swift */,
 				4B61F6BD2C4F6B5A00FDF5A4 /* Post.swift */,
 				4B61F6BF2C4F6CD000FDF5A4 /* PostViewModel.swift */,
 				4B61F6A42C4F685900FDF5A4 /* Assets.xcassets */,
@@ -156,7 +167,7 @@
 			files = (
 				4B61F6A82C4F685900FDF5A4 /* Preview Assets.xcassets in Resources */,
 				4B61F6A52C4F685900FDF5A4 /* Assets.xcassets in Resources */,
-				4B61F6B32C4F692100FDF5A4 /* GoogleService-Info.plist in Resources */,
+				4BBB03822C4F85D3002AB381 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +181,10 @@
 				4B61F6C02C4F6CD000FDF5A4 /* PostViewModel.swift in Sources */,
 				4B61F6BE2C4F6B5A00FDF5A4 /* Post.swift in Sources */,
 				4B61F6A32C4F685700FDF5A4 /* ContentView.swift in Sources */,
+				4BBB037D2C4F83E5002AB381 /* AuthViewModel.swift in Sources */,
+				4BBB037F2C4F8414002AB381 /* SignUpView.swift in Sources */,
 				4B61F6C22C4F734B00FDF5A4 /* PostView.swift in Sources */,
+				4B61F6C42C4F790300FDF5A4 /* FeedView.swift in Sources */,
 				4B61F6A12C4F685700FDF5A4 /* SociallyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +316,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SociallyApp/SociallyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SociallyApp/Preview Content\"";
@@ -317,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jaesuneo.SociallyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.Socially;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -330,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SociallyApp/SociallyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SociallyApp/Preview Content\"";
@@ -345,7 +361,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jaesuneo.SociallyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.Socially;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
