@@ -15,6 +15,21 @@ class AuthViewModel: ObservableObject {
     @Published var user: User?
     var currentNonce: String?
     
+    
+    func listenToAuthState() {
+        Auth.auth().addStateDidChangeListener { [weak self] _, user in
+            self?.user = user
+        }
+    }
+
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
     // MARK: - Sign in with Apple Methods
     func signInWithApple(request: ASAuthorizationAppleIDRequest) {
         let nonce = randomNonceString()
@@ -67,7 +82,8 @@ class AuthViewModel: ObservableObject {
     
     
     // MARK: - Private Methods
-    private func randomNonceString(length: Int = 32) -> String {        precondition(length > 0)
+    private func randomNonceString(length: Int = 32) -> String {
+        precondition(length > 0)
         let charset: [Character] =
         Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
         var result = ""

@@ -15,8 +15,8 @@ struct SignUpView: View {
     var body: some View {
         VStack {
             SignInWithAppleButton(onRequest: authModel.signInWithApple(request:),
-                                  onCompletion: authModel.signInWithAppleCompletion(result:))            .signInWithAppleButtonStyle(.black)
-                .frame(width: 290, height: 45, alignment: .center)
+                                              onCompletion: authModel.signInWithAppleCompletion(result:)) .signInWithAppleButtonStyle(.black)
+            .frame(width: 290, height: 45, alignment: .center)
         }
     }
 }
