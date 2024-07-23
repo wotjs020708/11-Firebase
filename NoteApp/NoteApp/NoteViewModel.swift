@@ -28,7 +28,7 @@ class NoteViewModel: ObservableObject {
     func fetchData() {
         databaseReference?.addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
-                print("No documents")
+                print("No documents: \(error?.localizedDescription ?? "-")")
                 return
             }
             
