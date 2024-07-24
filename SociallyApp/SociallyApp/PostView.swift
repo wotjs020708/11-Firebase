@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct PostView: View {
     @EnvironmentObject private var viewModel: PostViewModel
+
     
     @State private var description = ""
     

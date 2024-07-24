@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B609DC12C5081B2000DE454 /* ProFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B609DC02C5081B2000DE454 /* ProFileView.swift */; };
 		4B61F6A12C4F685700FDF5A4 /* SociallyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6A02C4F685700FDF5A4 /* SociallyApp.swift */; };
 		4B61F6A32C4F685700FDF5A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B61F6A22C4F685700FDF5A4 /* ContentView.swift */; };
 		4B61F6A52C4F685900FDF5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B61F6A42C4F685900FDF5A4 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B609DC02C5081B2000DE454 /* ProFileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProFileView.swift; sourceTree = "<group>"; };
 		4B61F69D2C4F685700FDF5A4 /* SociallyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SociallyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B61F6A02C4F685700FDF5A4 /* SociallyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SociallyApp.swift; sourceTree = "<group>"; };
 		4B61F6A22C4F685700FDF5A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				4BBB03812C4F85D3002AB381 /* GoogleService-Info.plist */,
 				4BBB03802C4F854C002AB381 /* SociallyApp.entitlements */,
 				4B61F6A02C4F685700FDF5A4 /* SociallyApp.swift */,
+				4B609DC02C5081B2000DE454 /* ProFileView.swift */,
 				4B61F6A22C4F685700FDF5A4 /* ContentView.swift */,
 				4B61F6C12C4F734B00FDF5A4 /* PostView.swift */,
 				4B61F6C32C4F790300FDF5A4 /* FeedView.swift */,
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B609DC12C5081B2000DE454 /* ProFileView.swift in Sources */,
 				4B61F6C02C4F6CD000FDF5A4 /* PostViewModel.swift in Sources */,
 				4B61F6BE2C4F6B5A00FDF5A4 /* Post.swift in Sources */,
 				4B61F6A32C4F685700FDF5A4 /* ContentView.swift in Sources */,
