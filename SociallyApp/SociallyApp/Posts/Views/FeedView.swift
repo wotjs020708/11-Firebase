@@ -10,8 +10,12 @@ import FirebaseFirestoreSwift
 
 struct FeedView: View {
     @EnvironmentObject private var authModel: AuthViewModel
-    @FirestoreQuery(collectionPath: "Posts") var posts: [Post]
+    @EnvironmentObject private var viewModel: PostViewModel
     
+    @FirestoreQuery(
+        collectionPath: "Posts",
+        predicates: [.order(by: "datePublished", descending: true)]
+    ) var posts: [Post]
     
     @State var showingPost: Bool = false
     
@@ -26,7 +30,9 @@ struct FeedView: View {
                         case .success(let image):
                             image
                                 .resizable()
+                                .scaledToFill()
                                 .frame(width: 300, height: 200)
+                                .clipped()
                         case .failure:
                             Image(systemName: "photo")
                         @unknown default:

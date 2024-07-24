@@ -28,7 +28,7 @@ struct SociallyApp: App {
                 if authModel.user != nil {
                     FeedView()
                         .tabItem {
-                            Image(systemName: "text.buble")
+                            Image(systemName: "text.bubble")
                             Text("Feeds")
                         }
                 }
