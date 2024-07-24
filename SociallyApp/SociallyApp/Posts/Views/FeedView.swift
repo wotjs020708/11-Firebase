@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestoreSwift
+import FirebaseAnalyticsSwift
 
 struct FeedView: View {
     @EnvironmentObject private var authModel: AuthViewModel
@@ -50,6 +51,7 @@ struct FeedView: View {
                 .frame(minWidth: 100, maxHeight: 350)
             }
             .navigationTitle("Feed")
+            .analyticsScreen(name: "FeedView")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button {

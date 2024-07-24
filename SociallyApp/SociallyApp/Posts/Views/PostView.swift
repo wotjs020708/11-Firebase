@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import FirebaseAnalyticsSwift
 
 struct PostView: View {
     @Environment(\.dismiss) private var dismiss
@@ -76,6 +77,7 @@ struct PostView: View {
                 }
                 .disabled(isUploading)
             }
+            .analyticsScreen(name: "PostView")
             .navigationTitle("New Psot")
         }
     }

@@ -8,6 +8,7 @@ import SwiftUI
 import AuthenticationServices
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseAnalyticsSwift
 
 struct SignUpView: View {
     @EnvironmentObject private var authModel: AuthViewModel
@@ -18,6 +19,7 @@ struct SignUpView: View {
                                               onCompletion: authModel.signInWithAppleCompletion(result:)) .signInWithAppleButtonStyle(.black)
             .frame(width: 290, height: 45, alignment: .center)
         }
+        .analyticsScreen(name: "SignUpView")
     }
 }
 

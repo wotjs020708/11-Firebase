@@ -7,7 +7,7 @@
 
 import SwiftUI
 import PhotosUI
-
+import FirebaseAnalyticsSwift
 struct ProfileView: View {
     @EnvironmentObject var authModel: AuthViewModel
     
@@ -85,6 +85,7 @@ struct ProfileView: View {
                 }
             }
         }
+        .analyticsScreen(name: "ProfileView")
         .onAppear { authModel.listenToAuthState() }
     }
 }
