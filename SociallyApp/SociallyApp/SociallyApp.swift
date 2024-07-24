@@ -24,7 +24,7 @@ struct SociallyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            PostView()
+            FeedView()
                 .environmentObject(PostViewModel())
 
 //            ProfileView()
