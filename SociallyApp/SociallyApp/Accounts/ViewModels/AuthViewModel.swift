@@ -27,24 +27,35 @@ class AuthViewModel: ObservableObject {
     func uploadProfileImage(_ imageData: Data) {
         let storageReference = Storage.storage().reference().child("\(UUID().uuidString)")
         
+        // Firebase Storage에 이미지 데이터를 업로드합니다.
+        // 'imageData'는 업로드할 이미지의 데이터, 'metadata'는 추가 정보인데 여기서는 사용하지 않습니다.
         storageReference.putData(imageData, metadata: nil) { metadata, error in
+            // 업로드 중 에러가 발생했는지 확인합니다.
             if let error = error {
+                // 에러가 있다면 함수를 여기서 종료합니다.
                 return
             }
             
+            // 업로드된 이미지의 다운로드 URL을 가져옵니다.
             storageReference.downloadURL { url, error in
+                // 다운로드 URL을 성공적으로 가져왔고, 현재 인증된 사용자가 있는지 확인합니다.
                 if let imageURL = url,
                    let user = Auth.auth().currentUser {
+                    // 사용자 프로필 변경 요청을 생성합니다.
                     let changeRequest = user.createProfileChangeRequest()
+                    // 프로필 사진 URL을 방금 업로드한 이미지의 URL로 설정합니다.
                     changeRequest.photoURL = imageURL
+                    // 변경 사항을 Firebase에 커밋(저장)합니다.
                     changeRequest.commitChanges {
                         error in
+                        // 프로필 업데이트 중 에러가 발생했는지 확인합니다.
                         if let error = error {
+                            // 에러가 있다면 콘솔에 출력하고 함수를 종료합니다.
                             print("\(error.localizedDescription)")
                             return
                         }
-                        self.user = Auth.auth().currentUser
-                    }
+                        // 프로필 업데이트가 성공했다면, 현재 사용자 정보를 새로고침합니다.
+                        self.user = Auth.auth().currentUser                    }
                 }
             }
         }

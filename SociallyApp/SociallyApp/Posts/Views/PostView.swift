@@ -14,6 +14,7 @@ struct PostView: View {
     
     
     @State private var description = ""
+    @State var isUploading = false
     
     @State var data: Data?
     @State var selectedItem: [PhotosPickerItem] = []
@@ -54,20 +55,26 @@ struct PostView: View {
             
             Section {
                 Button{
+                    // 로딩 시작
+                    isUploading = true
                     self.viewModel.addData(description: description,
                                            datePublished: Date(),
                                            data: data!) { error in
+                        // 로딩 제거
+                        isUploading = false
                         if let error = error {
                             print("\(error)")
                             return
                         }
                         print("upload & post done")
+                        
                         dismiss()
                     }
                     
                 } label: {
                     Text("Post")
                 }
+                .disabled(isUploading)
             }
             .navigationTitle("New Psot")
         }
