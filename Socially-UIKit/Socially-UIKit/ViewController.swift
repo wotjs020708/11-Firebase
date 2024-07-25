@@ -64,15 +64,18 @@ class ViewController: UIViewController {
     }
     
     func startListeningToFirestore() {
-        listener = db.collection("Posts").addSnapshotListener {  [weak self] querySnapshot, error in
-            guard let documents = querySnapshot?.documents else {
-                print("Error fetching documents: \(error!)")
-                return
+        listener = db.collection("Posts")
+            .order(by: "datePublished", descending: true)
+            .addSnapshotListener {
+                [weak self] querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+                
+                let posts = documents.compactMap { Post(document: $0)}
+                self?.updateDataSource(with: posts)
             }
-            
-            let posts = documents.compactMap { Post(document: $0)}
-            self?.updateDataSource(with: posts)
-        }
     }
     
     
