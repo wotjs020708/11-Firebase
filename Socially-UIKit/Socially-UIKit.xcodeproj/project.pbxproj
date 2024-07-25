@@ -16,6 +16,7 @@
 		4B1E1B342C51EC9A00D5BDEB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E1B332C51EC9A00D5BDEB /* Post.swift */; };
 		4B1E1B362C51ED0F00D5BDEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B1E1B352C51ED0F00D5BDEB /* GoogleService-Info.plist */; };
 		4B1E1B382C5225CD00D5BDEB /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E1B372C5225CD00D5BDEB /* PostTableViewCell.swift */; };
+		4B1E1B3A2C522B5600D5BDEB /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1E1B392C522B5600D5BDEB /* NewPostViewController.swift */; };
 		F2F79D3D477F31D4C87BEA3F /* Pods_Socially_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF98284D90BEAA5236AFF74C /* Pods_Socially_UIKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		4B1E1B332C51EC9A00D5BDEB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4B1E1B352C51ED0F00D5BDEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B1E1B372C5225CD00D5BDEB /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		4B1E1B392C522B5600D5BDEB /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		EF98284D90BEAA5236AFF74C /* Pods_Socially_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socially_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				4B1E1B212C51D67700D5BDEB /* SceneDelegate.swift */,
 				4B1E1B232C51D67700D5BDEB /* ViewController.swift */,
 				4B1E1B372C5225CD00D5BDEB /* PostTableViewCell.swift */,
+				4B1E1B392C522B5600D5BDEB /* NewPostViewController.swift */,
 				4B1E1B252C51D67700D5BDEB /* Main.storyboard */,
 				4B1E1B282C51D67800D5BDEB /* Assets.xcassets */,
 				4B1E1B2A2C51D67800D5BDEB /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 				4B1E1B382C5225CD00D5BDEB /* PostTableViewCell.swift in Sources */,
 				4B1E1B222C51D67700D5BDEB /* SceneDelegate.swift in Sources */,
 				4B1E1B342C51EC9A00D5BDEB /* Post.swift in Sources */,
+				4B1E1B3A2C522B5600D5BDEB /* NewPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

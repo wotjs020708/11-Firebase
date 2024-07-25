@@ -29,8 +29,23 @@ class ViewController: UIViewController {
         configureDataSource()
         startListeningToFirestore()
         
+        let barItem = UIBarButtonItem(systemItem: .add,
+                                      primaryAction: UIAction { [weak self] action in
+            let newPostViewController = NewPostViewController()
+            let navigationController = UINavigationController(rootViewController: newPostViewController)
+            
+            if let sheet = navigationController.sheetPresentationController {
+                sheet.detents = [.medium(), .large()]
+                sheet.prefersGrabberVisible = true
+                sheet.preferredCornerRadius = 20
+            }
+            
+            self?.present(navigationController, animated: true, completion: nil)
+        })
+        
+        navigationItem.rightBarButtonItem = barItem
     }
-
+    
     
     func configureTableview() {
         tableview = UITableView(frame: view.bounds, style: .plain)
