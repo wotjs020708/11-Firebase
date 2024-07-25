@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 import FirebaseFirestore
 
-struct Post: Identifiable, Decodable {
+struct Post: Hashable,Identifiable, Decodable {
     @DocumentID var id: String?
     var description: String?
     var imageURL: String?
