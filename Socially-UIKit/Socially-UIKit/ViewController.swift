@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import Kingfisher
 
 class ViewController: UIViewController {
     enum Section {
@@ -34,20 +35,15 @@ class ViewController: UIViewController {
     func configureTableview() {
         tableview = UITableView(frame: view.bounds, style: .plain)
         view.addSubview(tableview)
-        tableview.register(UITableViewCell.self, forCellReuseIdentifier: "PostCell")
+        tableview.register(PostTableViewCell.self, forCellReuseIdentifier: "PostCell")
         tableview.rowHeight = 280
     }
     
     func configureDataSource() {
         dataSource = UITableViewDiffableDataSource<Section, Post>(tableView: tableview) {
-            (tableview, indexPath, item) -> UITableViewCell? in
-            let cell = tableview.dequeueReusableCell(withIdentifier: "PostCell")
-            
-            var config = cell?.defaultContentConfiguration()
-            config?.text = item.description
-            
-            cell?.contentConfiguration = config
-            
+            (tableView, indexPath, item) -> UITableViewCell? in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
+            cell.configureItem(with: item)
             return cell
         }
     }
