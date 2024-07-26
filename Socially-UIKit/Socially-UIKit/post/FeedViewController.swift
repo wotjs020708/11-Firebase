@@ -73,7 +73,7 @@ class FeedViewController: UIViewController {
                 }
             }
             
-            
+            // 페이지 이동 이벤트 처리를 위한 컨트롤 UI 추가
             let control = UIControl()
             control.translatesAutoresizingMaskIntoConstraints = false
             let cellAction = UIAction { [weak self] _ in
