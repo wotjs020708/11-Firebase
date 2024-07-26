@@ -19,6 +19,7 @@
 		4BC0C78A2C53270200FBA73A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C7892C53270200FBA73A /* ProfileViewController.swift */; };
 		4BC0C78F2C5332D900FBA73A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C78E2C5332D900FBA73A /* AuthService.swift */; };
 		4BC0C7932C536E7600FBA73A /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C7922C536E7600FBA73A /* PostDetailViewController.swift */; };
+		4BC0C7952C537C9500FBA73A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0C7942C537C9500FBA73A /* PostService.swift */; };
 		F2F79D3D477F31D4C87BEA3F /* Pods_Socially_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF98284D90BEAA5236AFF74C /* Pods_Socially_UIKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		4BC0C78E2C5332D900FBA73A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4BC0C7912C53332800FBA73A /* Socially-UIKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Socially-UIKit.entitlements"; sourceTree = "<group>"; };
 		4BC0C7922C536E7600FBA73A /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		4BC0C7942C537C9500FBA73A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		EF98284D90BEAA5236AFF74C /* Pods_Socially_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Socially_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC0C78E2C5332D900FBA73A /* AuthService.swift */,
+				4BC0C7942C537C9500FBA73A /* PostService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				4B1E1B202C51D67700D5BDEB /* AppDelegate.swift in Sources */,
 				4B1E1B382C5225CD00D5BDEB /* PostTableViewCell.swift in Sources */,
 				4B1E1B222C51D67700D5BDEB /* SceneDelegate.swift in Sources */,
+				4BC0C7952C537C9500FBA73A /* PostService.swift in Sources */,
 				4BC0C7932C536E7600FBA73A /* PostDetailViewController.swift in Sources */,
 				4BC0C78A2C53270200FBA73A /* ProfileViewController.swift in Sources */,
 				4B1E1B342C51EC9A00D5BDEB /* Post.swift in Sources */,
