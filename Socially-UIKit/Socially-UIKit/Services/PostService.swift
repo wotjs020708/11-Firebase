@@ -10,9 +10,12 @@ import FirebaseFirestore
 import FirebaseStorage
 
 class PostService {
+    static let shared = PostService()
+    private init() {}
+    
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
-
+    
     func updatePost(post: Post, newDescription: String, completion: @escaping (Result<Post,Error>) -> Void) {
         if let postId = post.id {
             db.document("Posts/\(postId)").setData(["description": newDescription],
@@ -43,7 +46,7 @@ class PostService {
             }
         }
     }
-
+    
     func deletePost(post: Post, completion: @escaping (Result<Void,Error>) -> Void) {
         if let postId = post.id {
             db.collection("Posts").document(postId).delete { error in

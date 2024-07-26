@@ -62,8 +62,19 @@ class PostDetailViewController: UIViewController {
         configureWithPost()
         
         navigationItem.rightBarButtonItems = [
-            UIBarButtonItem(systemItem: .trash, primaryAction: UIAction { _ in
-                
+            UIBarButtonItem(systemItem: .trash, primaryAction: UIAction { [weak self] _ in
+                if let post = self?.post {
+                    PostService.shared.deletePost(post: post) { result in
+                        switch result {
+                        case .success:
+                            DispatchQueue.main.async {
+                                self?.navigationController?.popViewController(animated: true)
+                            }
+                        case .failure(let error):
+                            print("error: \(error)")
+                        }
+                    }
+                }
             }),
             UIBarButtonItem(systemItem: .edit, primaryAction: UIAction { _ in})
         ]
