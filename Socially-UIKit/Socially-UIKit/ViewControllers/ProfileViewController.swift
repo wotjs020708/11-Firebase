@@ -18,12 +18,30 @@ class ProfileViewController: UIViewController {
     private let userInfoLabel = UILabel()
     private let logoutButton = UIButton(type: .system)
     
-    private let handleAppleButtonPress: UIAction = UIAction { _ in
-        
+    private lazy var handleAppleButtonPress: UIAction = UIAction { [weak self] _ in
+        if let self = self {
+            AuthService.shared.performAppleSignIn(on: self) { result in
+                switch result {
+                case .success(let user):
+                    print("Successfully signed in as user: \(user.uid)")
+                case .failure(let error):
+                    print("Error signing in: \(error.localizedDescription)")
+                }
+            }
+        } else {
+            print("Error self is nil")
+        }
     }
     
-    private let handlelogout: UIAction = UIAction { _ in
-        
+    private lazy var handleLogout: UIAction = UIAction { [weak self] _ in
+           AuthService.shared.signOut() { result in
+               switch result {
+               case .success:
+                   self?.updateUI()
+               case .failure(let error):
+                   print("Error signing out: \(error.localizedDescription)")
+               }
+           }
     }
     
     override func viewDidLoad() {
@@ -37,7 +55,7 @@ class ProfileViewController: UIViewController {
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
         updateUI()
-
+        
     }
     
     private func setupUI() {
@@ -56,7 +74,7 @@ class ProfileViewController: UIViewController {
         
         // 로그아웃 버튼 설정
         logoutButton.setTitle("로그아웃", for: .normal)
-        logoutButton.addAction(handlelogout, for: .touchUpInside)
+        logoutButton.addAction(handleLogout, for: .touchUpInside)
         
         view.addSubview(logoutButton)
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
@@ -98,15 +116,44 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+}
+
+
+extension ProfileViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            guard let nonce = AuthService.shared.currentNonce else {
+                fatalError("Invalid state: A login callback was received, but no login request was sent.")
+            }
+            guard let appleIDToken = appleIDCredential.identityToken else {
+                print("Unable to fetch identity token")
+                return
+            }
+            guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
+                print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+                return
+            }
+            // 파이어베이스에 애플 인증 전달
+            AuthService.shared.signInWithApple(idToken: idTokenString, rawNonce: nonce) { [weak self] result in
+                switch result {
+                case .success(let user):
+                    print("Successfully signed in as user: \(user.uid)")
+                    self?.updateUI()
+                case .failure(let error):
+                    print("Error signing in: \(error.localizedDescription)")
+                    // 에러 처리
+                }
+            }
+        }
+    }
+
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("Sign in with Apple errored: \(error)")
+    }
+}
+
+extension ProfileViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
 }

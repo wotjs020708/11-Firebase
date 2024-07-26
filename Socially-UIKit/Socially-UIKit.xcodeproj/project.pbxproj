@@ -87,12 +87,12 @@
 				4B1E1B1F2C51D67700D5BDEB /* AppDelegate.swift */,
 				4BC0C78C2C53325B00FBA73A /* post */,
 				4B1E1B212C51D67700D5BDEB /* SceneDelegate.swift */,
+				4BC0C7902C5332E700FBA73A /* Services */,
 				4BC0C78B2C53323100FBA73A /* ViewControllers */,
 				4BC0C78D2C53327500FBA73A /* Account */,
 				4B1E1B282C51D67800D5BDEB /* Assets.xcassets */,
 				4B1E1B2A2C51D67800D5BDEB /* LaunchScreen.storyboard */,
 				4B1E1B2D2C51D67800D5BDEB /* Info.plist */,
-				4BC0C7902C5332E700FBA73A /* Services */,
 			);
 			path = "Socially-UIKit";
 			sourceTree = "<group>";
