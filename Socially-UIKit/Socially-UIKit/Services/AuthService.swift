@@ -17,6 +17,10 @@ class AuthService {
 
     fileprivate var currentNonce: String?
 
+    var currentUser: User? {
+        Auth.auth().currentUser
+    }
+    
     // 애플로그인
     func performAppleSignIn(on viewController: UIViewController,
                             completion: @escaping (Result<User, Error>) -> Void) {
