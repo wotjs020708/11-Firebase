@@ -49,6 +49,11 @@ class FeedViewController: UIViewController {
     
     func configureTableview() {
         tableview = UITableView(frame: view.bounds, style: .plain)
+        let refreshControl = UIRefreshControl()
+        refreshControl.addAction(UIAction { [weak self] _ in
+            self?.reloadData()
+        }, for: .valueChanged)
+        tableview.refreshControl = refreshControl
         view.addSubview(tableview)
         tableview.register(PostTableViewCell.self, forCellReuseIdentifier: "PostCell")
         tableview.rowHeight = 280
@@ -63,12 +68,28 @@ class FeedViewController: UIViewController {
         }
     }
     
+    func reloadData() {
+        db.collection("Posts")
+            .order(by: "datePublished", descending: true).getDocuments {
+                [weak self] querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+                let posts = documents.compactMap { Post(document: $0) }
+                self?.updateDataSource(with: posts)
+                self?.tableview.refreshControl?.endRefreshing()
+            }
+    }
+    
+    
+    
     func startListeningToFirestore() {
         listener = db.collection("Posts")
             .order(by: "datePublished", descending: true)
             .addSnapshotListener {
                 [weak self] querySnapshot, error in
-                    print("update document")
+                print("update document")
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error!)")
                     return
