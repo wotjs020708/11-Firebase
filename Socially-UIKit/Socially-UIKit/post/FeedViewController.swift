@@ -77,25 +77,26 @@ class FeedViewController: UIViewController {
                     return
                 }
                 let posts = documents.compactMap { Post(document: $0) }
+                posts.forEach { post in
+                    if let path = post.path {
+                        post.checkImageURL(path)
+                    }
+                }
                 self?.updateDataSource(with: posts)
                 self?.tableview.refreshControl?.endRefreshing()
             }
     }
-    
-    
     
     func startListeningToFirestore() {
         listener = db.collection("Posts")
             .order(by: "datePublished", descending: true)
             .addSnapshotListener {
                 [weak self] querySnapshot, error in
-                print("update document")
                 guard let documents = querySnapshot?.documents else {
                     print("Error fetching documents: \(error!)")
                     return
                 }
-                
-                let posts = documents.compactMap { Post(document: $0)}
+                let posts = documents.compactMap { Post(document: $0) }
                 self?.updateDataSource(with: posts)
             }
     }
