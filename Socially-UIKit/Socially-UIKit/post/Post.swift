@@ -12,6 +12,8 @@ import FirebaseStorage
 
 struct Post: Hashable,Identifiable, Decodable {
     @DocumentID var id: String?
+    var userId: String?
+    var userName: String?
     var description: String?
     var imageURL: String?
     var path: String?
@@ -35,6 +37,7 @@ struct Post: Hashable,Identifiable, Decodable {
         if let path = document.data()["path"] as? String {
             self.path = path
         }
+        self.userName = document.data()["userName"] as? String
     }
     
     

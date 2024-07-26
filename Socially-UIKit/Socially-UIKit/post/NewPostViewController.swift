@@ -11,10 +11,10 @@ import FirebaseFirestore
 import FirebaseStorage
 
 class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewControllerDelegate {
-
+    
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
-
+    
     private let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -48,17 +48,17 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
     }()
     
     private var selectedImageData: Data?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "New Post"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
-
-
+        
+        
         setupUI()
         setupConstraints()
-                
+        
         selectImageButton.addAction(UIAction { [weak self] action in
             var config = PHPickerConfiguration()
             config.selectionLimit = 1
@@ -132,8 +132,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
             postButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-
-
+    
+    
     //  MARK: - UITextFieldDelegate
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .placeholderText {
@@ -148,7 +148,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
             textView.textColor = .placeholderText
         }
     }
-
+    
     // MARK: - PHPickerViewControllerDelgate
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
@@ -166,8 +166,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
             }
         }
     }
-
-
+    
+    
     // MARK: - Methods
     func addData(description: String, datePublished: Date, data: Data, completion: @escaping (Error?) -> Void) {
         let path = UUID().uuidString
@@ -179,7 +179,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
         // 메타데이터 설정
         let metadata = StorageMetadata()
         metadata.contentType = mimeType
-
+        
         
         fileRef.putData(data, metadata: metadata) { metadata, error in
             if let error = error {
@@ -189,6 +189,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
             let post = [
                 "description": description,
                 "datePublished": datePublished,
+                "userId": AuthService.shared.currentUser?.uid ?? "",
+                "userName": AuthService.shared.currentUser?.displayName ?? "Unknown",
                 "path": path,
             ]
             
@@ -223,6 +225,6 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
             return "application/octet-stream"
         }
     }
-
-
+    
+    
 }
