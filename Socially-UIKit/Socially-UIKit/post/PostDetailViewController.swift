@@ -8,7 +8,7 @@
 import UIKit
 
 class PostDetailViewController: UIViewController {
-    let post: Post
+    var post: Post
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +76,29 @@ class PostDetailViewController: UIViewController {
                     }
                 }
             }),
-            UIBarButtonItem(systemItem: .edit, primaryAction: UIAction { _ in})
+            UIBarButtonItem(systemItem: .edit, primaryAction: UIAction { [weak self] _ in
+                let alertController = UIAlertController(title: "Edit Post", message: "Update the description", preferredStyle: .alert)
+                alertController.addTextField { textField in
+                    textField.text = self?.post.description
+                }
+                let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
+                    guard let self = self, let newDescription = alertController.textFields?.first?.text else { return }
+                    PostService.shared.updatePost(post: self.post, newDescription: newDescription) { result in
+                        switch result {
+                        case .success(let updatedPost):
+                            self.post = updatedPost
+                            self.configureWithPost()
+                        case .failure(let error):
+                            print("Failed to update post: \(error.localizedDescription)")
+                            // Show error alert
+                        }
+                    }
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertController.addAction(saveAction)
+                alertController.addAction(cancelAction)
+                self?.present(alertController, animated: true, completion: nil)
+            })
         ]
     }
     
