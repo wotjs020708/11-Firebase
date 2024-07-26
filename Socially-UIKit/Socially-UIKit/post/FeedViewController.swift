@@ -66,22 +66,30 @@ class FeedViewController: UIViewController {
             
             cell.configureItem(with: item)
             
+            //기존 컨트롤 uI 제거
+            cell.contentView.subviews.forEach{ subview in
+                if subview is UIControl {
+                    subview.removeFromSuperview()
+                }
+            }
+            
+            
             let control = UIControl()
-                        control.translatesAutoresizingMaskIntoConstraints = false
-                        let cellAction = UIAction { [weak self] _ in                
-                            let detailViewController = PostDetailViewController(post: item)
-                            self?.navigationController?.pushViewController(detailViewController, animated: true)
-                        }
-                        control.addAction(cellAction, for: .touchUpInside)
-                        cell.contentView.addSubview(control)
-
-                        NSLayoutConstraint.activate([
-                            control.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
-                            control.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
-                            control.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
-                            control.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
-                        ])
-
+            control.translatesAutoresizingMaskIntoConstraints = false
+            let cellAction = UIAction { [weak self] _ in
+                let detailViewController = PostDetailViewController(post: item)
+                self?.navigationController?.pushViewController(detailViewController, animated: true)
+            }
+            control.addAction(cellAction, for: .touchUpInside)
+            cell.contentView.addSubview(control)
+            
+            NSLayoutConstraint.activate([
+                control.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
+                control.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
+                control.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
+                control.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
+            ])
+            
             return cell
         }
     }
