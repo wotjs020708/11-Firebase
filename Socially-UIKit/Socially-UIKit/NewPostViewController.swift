@@ -203,7 +203,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate, PHPickerViewC
                 let post = [
                     "description": description,
                     "datePublished": datePublished,
-                    "imageURL": url.absoluteString
+                    "imageURL": url.absoluteString,
+                    "path": path,
                 ]
                 
                 self.db.collection("Posts").addDocument(data: post) { error in

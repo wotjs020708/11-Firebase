@@ -9,7 +9,7 @@ import UIKit
 import FirebaseFirestore
 import Kingfisher
 
-class ViewController: UIViewController {
+class FeedViewController: UIViewController {
     enum Section {
         case main
     }
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Feed"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "text.bubble"), tag: 0)
+        self.view.backgroundColor = .white
         db = Firestore.firestore()
         configureTableview()
         configureDataSource()
