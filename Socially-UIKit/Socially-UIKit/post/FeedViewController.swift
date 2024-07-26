@@ -63,7 +63,25 @@ class FeedViewController: UIViewController {
         dataSource = UITableViewDiffableDataSource<Section, Post>(tableView: tableview) {
             (tableView, indexPath, item) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
+            
             cell.configureItem(with: item)
+            
+            let control = UIControl()
+                        control.translatesAutoresizingMaskIntoConstraints = false
+                        let cellAction = UIAction { [weak self] _ in                
+                            let detailViewController = PostDetailViewController(post: item)
+                            self?.navigationController?.pushViewController(detailViewController, animated: true)
+                        }
+                        control.addAction(cellAction, for: .touchUpInside)
+                        cell.contentView.addSubview(control)
+
+                        NSLayoutConstraint.activate([
+                            control.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
+                            control.trailingAnchor.constraint(equalTo: cell.trailingAnchor),
+                            control.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
+                            control.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor),
+                        ])
+
             return cell
         }
     }

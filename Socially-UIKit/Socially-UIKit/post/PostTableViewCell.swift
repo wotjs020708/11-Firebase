@@ -36,6 +36,7 @@ class PostTableViewCell: UITableViewCell {
     }
 
     private func setupViews() {
+        accessoryType = .disclosureIndicator
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(postImageView)
 
